@@ -397,7 +397,6 @@
         <div class="fact-section">
             <h3>🛡️ Gannon University Development</h3>
             <ul class="facts-list" id="gannon-university-history-list">
-                 <li>**Gannon Facts Loading...** If you see this, the facts are on their way! Click the 'Fun Facts' tab and back, or check the trivia game!</li>
             </ul>
         </div>
     </div>
@@ -449,7 +448,7 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
             
-            // Re-load facts when Gannon tab is opened, just in case (redundancy check)
+            // Re-load facts when Gannon tab is opened, ensuring visibility 
             if (tabName === 'Tab5') {
                  loadFacts('gannonUniversityHistory', 'gannon-university-history-list');
             }
@@ -541,7 +540,7 @@
         function loadFacts(category, elementId) {
             const factsList = document.querySelector(`#${elementId} .facts-list`);
             if (factsList) {
-                factsList.innerHTML = ''; // Clear existing content (like the default message)
+                factsList.innerHTML = ''; // Clear existing content
                 factData[category].forEach(factText => {
                     const listItem = document.createElement('li');
                     listItem.textContent = factText;
